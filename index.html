@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet icon" href="https://images.sftcdn.net/images/t_app-icon-m/p/eedc1f50-eec1-4615-a958-4c7fed512488/2683862697/bmi-calculator-ziq-logo">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#n1">O que é</a></li>
+            <li><a href="#n2">Classificação</a></li>
+            <li><a href="#n3">Limitações</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>IMC: índice de Massa Corporal</h1>
+</header>
+
+<body>
+
+    <main>
+
+        <section id="n1">
+            <h2>O que é o IMC:</h2>
+            <p>O Índice de Massa Corporal (IMC) é uma medida usada para avaliar se uma pessoa está dentro de uma faixa
+                de
+                peso saudável em relação à sua altura. Ele é calculado com base no peso e na altura da pessoa e pode
+                ajudar
+                a identificar se ela está com baixo peso, peso adequado, sobrepeso ou obesidade.</p>
+        </section>
+
+        <section id="n2">
+            <h2>Classificação do IMC:</h2>
+            <p>De acordo com a Organização Mundial da Saúde (OMS), a classificação do IMC é a seguinte:</p>
+            <ul type="disc">
+                <li><strong>Abaixo do peso:</strong> IMC abaixo de 18,5</li>
+                <li><strong>Peso normal:</strong> IMC entre 18,5 e 24,9</li>
+                <li><strong>Sobrepeso:</strong> IMC entre 25 e 29,9</li>
+                <li><strong>Obesidade:</strong> IMC entre 30 e 34,9</li>
+                <li><strong>Obesidade severa:</strong> IMC entre 35 e 39,9</li>
+                <li><strong>Obesidade mórbida:</strong> IMC acima de 40</li>
+            </ul>
+        </section>
+
+
+        <section id="n3">
+            <h2>Limitações do IMC:</h2>
+            <p>Embora o IMC seja uma ferramenta útil para a avaliação do peso corporal, ele tem algumas limitações. Ele
+                não
+                leva em consideração fatores como a distribuição de gordura, a massa muscular, a idade e o sexo. Por
+                exemplo, atletas musculosos podem ter um IMC elevado, mas isso não significa que estejam acima do peso
+                ou
+                com excesso de gordura. Por isso, é importante usar o IMC como uma orientação inicial e complementá-lo
+                com
+                outras avaliações de saúde.</p>
+        </section>
+    </main><br>
+
+    <div class="calculadora">
+        <h2 class="h2f">Índice de Massa Corporal</h2>
+
+        <!-- <form action="#">  -->
+        <div class="infos">
+            <label for="alura"> Altura:</label>
+            <input type="number" name="altura" id="altura">
+
+            <label for="peso"> Peso (kg):</label>
+            <input type="number" name="peso" id="peso">
+
+            <button onclick="calcImc()"> Calcular IMC </button>
+
+            <p class="indice">Seu índice de massa corporal é: <span id="resultado"></span></p>
+        </div>
+    </div>
+
+
+
+    <!-- </form>  -->
+
+
+    <script>
+        function calcImc() {
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+
+            const resultado = peso / (altura ** 2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2)
+        }
+    </script>
+
+</body>
+
+<footer>
+    <h6>Todos os direitos reservados &copy; 2024</h6>
+</footer>
+
+</html>
